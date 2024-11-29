@@ -4,7 +4,6 @@ import java.util.Set;
 
 class RandomizedSet {
 
-    // Set there is not as efficient, it is is more efficient to use HashMap here
         private final Set<Integer> values;
         Random random= new Random();
 
@@ -20,7 +19,7 @@ class RandomizedSet {
             return values.remove(val);
         }
 
-        // Needed to avoid values to array here and then getting it by index
+        // Needed to avoid values to array here as it is O(n)
         public int getRandom() {
             return (int) values.toArray()[random.nextInt(values.size())];
         }
